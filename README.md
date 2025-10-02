@@ -7,7 +7,6 @@ LMS email address `Jesus.Urtasun@lms.mrc.ac.uk`
 ICL email address `jurtasun@ic.ac.uk`
 
 <img src="/readme_figures/ukri_lms_logo.png" width = 700>
-<img src="/readme_figures/imperial_college_logo.png" width = 700>
 
 ### Find the content of the course in GitHub:
 [LMS Introduction to Machine Learning](https://github.com/jurtasun/2026_lms_intro_machine_learning)
@@ -22,28 +21,39 @@ No prior mathematical or programming experience is required for the attendance o
 
 ## Roadmap of the course
 
-### Chapter 1
+### Chapter 1. What is learning?
 
-- Chapter 1
+- Introduction to information theory.
+- Quantify the accuracy and error of predictions.
+- The loss function and some examples.
 
-### Chapter 2
+### Chapter 2. Simple mathematical intuitions
 
-- Chapter 2
+- Regression vs classification, continous vs categorical and logistic.
+- Activation functions. Quantify importance decision thresholds.
+- Derivatives and gradients. A recap on calculus, and modelling change.
 
-### Chapter 3
+### Chapter 3. Roadmap of ML algorithms
 
-- Chapter 3
+- Supervised learning. Learning from inputs and known outputs.
+- Unsupervised learning. Learning from input only, without labeled output.
+- Reinforcement learning. Trial and error, with reward / penalty.
 
-### Chapter 4
+### Chapter 4. Build a ML model from scratch
 
-- Chapter 4
+- KNN: predict a cell's type by looking at similar cells.
+- Linear regression: find the best model (fit) explaining gene expression vs stimulus.
+- NN: learn image classification to detect brian cancer.
+- Clustering: find cell types over single-cell RNA-seq data.
 
-### Chapter 5
+### Chapter 5. Generative AI
 
-- Chapter 5
+- Stochasticity and Markov processes.
+- The transformer technology: pattern recognition with memory access.
+- Modern applications: `AlphaFold` and `GPT` language modeles.
 
-## Getting `R` and `Python` set up on your own machine
-Getting `R` and `Python` set up on your own machine
+## Setting up `Python` and `R` on your own machine
+Setting up `Python` and `R` on your own machine
 
 ### Instructions for Mac and Linux
 Instructions for Mac and Linux
