@@ -1,4 +1,4 @@
-## RCDS - Introduction to Machine Learning
+## MRC LMS - Introduction to Machine Learning
 
 ### Jesús Urtasun Elizari, MRC LMS & RCDS ICL
 
@@ -11,13 +11,13 @@ ICL email address `jurtasun@ic.ac.uk`
 ### Find the content of the course in GitHub:
 [LMS Introduction to Machine Learning](https://github.com/jurtasun/2026_lms_intro_machine_learning)
 
-This course provides an introduction to Machine Learning.
+This course provides an introduction to Machine Learning algorithms.
 The topics covered will include basic concepts on information theory, classification vs regression problems, supervised vs supervised algorithms, and generative AI. 
-The aim of the course is to provide strong foundations at the mathematical and theoretical level, while providing practical exercises to work on real data.
+The aim of the course is to provide strong foundations at both the mathematical and theoretical level, while providing practical exercises to work on real data.
 
 The course is organized in five chapters, covering the topics listed below. 
 All will be followed by a practical session and hands-on coding, both in `Python` and `R`. 
-No prior mathematical or programming experience is required for the attendance of this course.
+No prior mathematical or programming experience is required to attend this course.
 
 ## Roadmap of the course
 
