@@ -1,4 +1,4 @@
 # MRC LMS Introduction to probability, statistics and hypothesis testing
-# Chapter 1: Descriptive statistics
+# Chapter 5: Generative AI
 
 # Exercise 1
