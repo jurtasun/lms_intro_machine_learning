@@ -20,7 +20,9 @@ from collections import Counter
 
 # Generate example input ......................................................
 
-# Example data: each row represent a cell, columns represent featues(gene expression, etc)
+print("\nGenerate example input")
+
+# Example data: rows represent cells, columns represent features (e.g. gene expression)
 data = np.array([
     [5.1, 1.4, 0.2], # Cell type A
     [4.9, 1.4, 0.2],
@@ -32,7 +34,7 @@ print("\nData:\n", data)
 print("Shape:", data.shape)
 print("Format: ", type(data))
 
-# Labels for training
+# Labels for training: cell types
 labels = np.array(['A', 'A', 'B', 'B', 'C', 'C'])
 print("\nLabels: ", labels)
 print("Shape:", labels.shape)

@@ -20,6 +20,8 @@ from collections import Counter
 
 # Generate example input ......................................................
 
+print("\nGenerate example input")
+
 # Example data: rows represent cells, columns represent features (e.g. gene expression)
 data = np.array([
     [5.1, 1.4, 0.2], # Cell type A
