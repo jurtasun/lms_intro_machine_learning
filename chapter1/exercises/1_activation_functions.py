@@ -1,17 +1,28 @@
-# MRC LMS Introduction to Machine Learning
+# Introduction to Machine Learning
+# Jesús Urtasun Elizari: MRC LMS 2026
 # Chapter 1: What is learning
 
-# Exercise 2: Activation functions
+
+
+# Exercise 1: 
+# Implement a series of activation functions: ReLU, sigmoid, softmax
+# Check calculation with tensorflow / pytorch implementation
 
 
 
-# Import libraries
+# Import libraries ............................................................
+
 import numpy as np
+import matplotlib.pyplot as plt
 import tensorflow as tf
 import torch
 
-# Generate example input
-x = np.array([1.0, 2.0, 3.0])
+
+
+
+# Generate example input ......................................................
+
+x = np.array([-1.0, 0.0, 1.0, 2.0, 3.0])
 print("\nExplore input:")
 print("x: ", x)
 print("x shape:", x.shape)
@@ -19,9 +30,7 @@ print("x format: ", type(x))
 
 
 
-# ---------------------------
-# Manual implementations
-# ---------------------------
+# Manual implementation .......................................................
 
 # ReLU
 def relu_manual(x):
@@ -47,9 +56,7 @@ print("Softmax:", softmax_m)
 
 
 
-# ---------------------------
-# TensorFlow
-# ---------------------------
+# TensorFlow implementation ...................................................
 
 # Convert input to required format
 x_tf = tf.constant(x, dtype = tf.float32)
@@ -65,9 +72,7 @@ print("Softmax:", softmax_tf)
 
 
 
-# ---------------------------
-# PyTorch
-# ---------------------------
+# PyTorch implementation ......................................................
 
 # Convert input to required format
 x_torch = torch.tensor(x, dtype = torch.float32)
@@ -83,9 +88,7 @@ print("Softmax:", softmax_torch)
 
 
 
-# ---------------------------
-# Precision check
-# ---------------------------
+# Precision check .............................................................
 
 print("\nPrecision check (Manual vs TensorFlow):")
 print("Sigmoid close: ", np.allclose(sigmoid_m, sigmoid_tf))
