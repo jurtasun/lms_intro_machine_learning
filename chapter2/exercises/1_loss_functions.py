@@ -13,89 +13,88 @@
 # Import libraries ............................................................
 
 import numpy as np
-import matplotlib.pyplot as plt
 import tensorflow as tf
 import torch
+import torch.nn.functional as F
 
 
 
+# Sample input and output .....................................................
 
-# Generate example input ......................................................
+y_true_cont = np.array([1.0, 2.0, 3.0])       # continuous for MSE/Chi2
+y_pred_cont = np.array([1.1, 1.9, 3.2])
 
-x = np.array([-1.0, 0.0, 1.0, 2.0, 3.0])
-print("\nExplore input:")
-print("x: ", x)
-print("x shape:", x.shape)
-print("x format: ", type(x))
+y_true_bin = np.array([1, 0, 1])              # binary labels
+y_pred_bin = np.array([0.9, 0.2, 0.8])
 
-
-
-# Manual implementation .......................................................
-
-# ReLU
-def relu_manual(x):
-    return np.maximum(0, x)
-
-# Sigmoid
-def sigmoid_manual(x):
-    return 1 / (1 + np.exp(-x))
-
-# Softmax
-def softmax_manual(x):
-    exps = np.exp(x - np.max(x))  # for numerical stability
-    return exps / np.sum(exps)
-
-# Check manual implementation
-sigmoid_m = sigmoid_manual(x)
-relu_m = relu_manual(x)
-softmax_m = softmax_manual(x)
-print("\nManual implementation:")
-print("Sigmoid:", sigmoid_m)
-print("ReLU:", relu_m)
-print("Softmax:", softmax_m)
+y_true_cat = np.array([[1,0,0],[0,1,0],[0,0,1]])  # one-hot for categorical
+y_pred_cat = np.array([[0.8,0.1,0.1],[0.1,0.7,0.2],[0.2,0.2,0.6]])
 
 
 
-# TensorFlow implementation ...................................................
+# Manual implementations ......................................................
 
-# Convert input to required format
-x_tf = tf.constant(x, dtype = tf.float32)
+def mse_manual(y_true, y_pred):
+    return np.mean((y_true - y_pred)**2)
 
-# Check tensorflow implementation
-sigmoid_tf = tf.nn.sigmoid(x_tf).numpy()
-relu_tf = tf.nn.relu(x_tf).numpy()
-softmax_tf = tf.nn.softmax(x_tf).numpy()
-print("\nTensorFlow implementation:")
-print("Sigmoid:", sigmoid_tf)
-print("ReLU:", relu_tf)
-print("Softmax:", softmax_tf)
+def chi2_manual(y_true, y_pred):
+    return np.sum((y_true - y_pred)**2 / (y_pred + 1e-7))
 
+def binary_ce_manual(y_true, y_pred):
+    y_pred = np.clip(y_pred, 1e-7, 1-1e-7)
+    return -np.mean(y_true*np.log(y_pred) + (1-y_true)*np.log(1-y_pred))
 
-
-# PyTorch implementation ......................................................
-
-# Convert input to required format
-x_torch = torch.tensor(x, dtype = torch.float32)
-
-# Check pytorch implementation
-sigmoid_torch = torch.sigmoid(x_torch).numpy()
-relu_torch = torch.relu(x_torch).numpy()
-softmax_torch = torch.softmax(x_torch, dim=0).numpy()
-print("\nPyTorch implementation:")
-print("Sigmoid:", sigmoid_torch)
-print("ReLU:", relu_torch)
-print("Softmax:", softmax_torch)
+def categorical_ce_manual(y_true, y_pred):
+    y_pred = np.clip(y_pred, 1e-7, 1-1e-7)
+    return -np.mean(np.sum(y_true * np.log(y_pred), axis=1))
 
 
 
-# Precision check .............................................................
+# TensorFlow computations .....................................................
 
-print("\nPrecision check (Manual vs TensorFlow):")
-print("Sigmoid close: ", np.allclose(sigmoid_m, sigmoid_tf))
-print("ReLU close: ", np.allclose(relu_m, relu_tf))
-print("Softmax close: ", np.allclose(softmax_m, softmax_tf))
+mse_tf = tf.keras.losses.MeanSquaredError()(y_true_cont, y_pred_cont).numpy()
+chi2_tf = tf.reduce_sum((y_true_cont - y_pred_cont)**2 / (y_pred_cont + 1e-7)).numpy()
+bce_tf = tf.keras.losses.BinaryCrossentropy()(y_true_bin, y_pred_bin).numpy()
+cce_tf = tf.keras.losses.CategoricalCrossentropy()(y_true_cat, y_pred_cat).numpy()
 
-print("\nCross-check (Manual vs PyTorch):")
-print("Sigmoid close: ", np.allclose(sigmoid_m, sigmoid_torch))
-print("ReLU close: ", np.allclose(relu_m, relu_torch))
-print("Softmax close: ", np.allclose(softmax_m, softmax_torch))
+
+
+# PyTorch computations ........................................................
+
+y_true_cont_t = torch.tensor(y_true_cont, dtype = torch.float32)
+y_pred_cont_t = torch.tensor(y_pred_cont, dtype = torch.float32)
+y_true_bin_t = torch.tensor(y_true_bin, dtype = torch.float32)
+y_pred_bin_t = torch.tensor(y_pred_bin, dtype = torch.float32)
+y_true_cat_t = torch.tensor(y_true_cat, dtype = torch.float32)
+y_pred_cat_t = torch.tensor(y_pred_cat, dtype = torch.float32)
+
+mse_torch = F.mse_loss(y_pred_cont_t, y_true_cont_t).item()
+chi2_torch = torch.sum((y_true_cont_t - y_pred_cont_t)**2 / (y_pred_cont_t + 1e-7)).item()
+bce_torch = F.binary_cross_entropy(y_pred_bin_t, y_true_bin_t).item()
+cce_torch = F.cross_entropy(y_pred_cat_t.log(), y_true_cat_t).item()  # log for torch cross_entropy expects logits
+
+
+
+# Print comparisons ...........................................................
+
+print("=== MSE ===")
+print("Manual: ", mse_manual(y_true_cont, y_pred_cont))
+print("TF    : ", mse_tf)
+print("Torch : ", mse_torch)
+
+print("\n=== Chi-squared ===")
+print("Manual: ", chi2_manual(y_true_cont, y_pred_cont))
+print("TF    : ", chi2_tf)
+print("Torch : ", chi2_torch)
+
+print("\n=== Binary Cross-Entropy ===")
+print("Manual: ", binary_ce_manual(y_true_bin, y_pred_bin))
+print("TF    : ", bce_tf)
+print("Torch : ", bce_torch)
+
+print("\n=== Categorical Cross-Entropy ===")
+print("Manual: ", categorical_ce_manual(y_true_cat, y_pred_cat))
+print("TF    : ", cce_tf)
+print("Torch : ", cce_torch)
+
+
