@@ -9,7 +9,7 @@ ICL email address `jurtasun@ic.ac.uk`
 <img src="/readme_figures/ukri_lms_logo.png" width = 700>
 
 ### Find the content of the course in GitHub:
-[LMS Introduction to Machine Learning](https://github.com/jurtasun/2026_lms_intro_machine_learning)
+[LMS Introduction to Machine Learning](https://github.com/jurtasun/lms_intro_machine_learning)
 
 This course provides an introduction to Machine Learning algorithms.
 The topics covered will include basic concepts on information theory, classification vs regression problems, supervised vs supervised algorithms, and generative AI. 
