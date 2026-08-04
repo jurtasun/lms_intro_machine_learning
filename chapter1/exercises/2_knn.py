@@ -5,7 +5,7 @@
 
 
 # Exercise 2: 
-# Implement a series of activation functions
+# Implement a knn classification
 # Check calculation with tensorflow / pytorch implementation
 
 
@@ -15,6 +15,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
+
 
 
 
