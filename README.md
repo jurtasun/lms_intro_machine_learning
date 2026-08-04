@@ -19,6 +19,11 @@ The course is organized in five chapters, covering the topics listed below.
 All will be followed by a practical session and hands-on coding, both in `Python` and `R`. 
 No prior mathematical or programming experience is required to attend this course.
 
+## Binder Setup
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<your-github-username>/lms_intro_machine_learning/main)
+
+
 ## Roadmap of the course
 
 ### Chapter 1. What is learning?
