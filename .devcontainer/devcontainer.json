@@ -1,0 +1,11 @@
+{
+  "name": "Python 3",
+  // use the default python image
+  // VScode extensions
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ],
+  // install libs after the creation of the environment 
+  "postCreateCommand": "pip install numpy pandas matplotlib scipy ipywidgets"
+}
