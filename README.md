@@ -21,6 +21,7 @@ No prior mathematical or programming experience is required to attend this cours
 
 ## Binder Setup
 
+To launch the notebooks for the practical sessions click the `Binder` below.
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jurtasun/lms_intro_machine_learning/main)
 
 
