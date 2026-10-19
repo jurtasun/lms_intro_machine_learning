@@ -29,30 +29,29 @@ To launch the notebooks for the practical sessions click the `Binder` below.
 
 ### Chapter 1. What is learning?
 
-- Introduction to information theory.
-- Quantify the accuracy and error of predictions.
-- The loss function and some examples.
+- Foundations of learning and information theory.
+- Regression vs classification, continous vs categorical and logistic.
+- Example of classification problem, the KNN: predict a cell's type by looking at similar cells.
+- Example of regression problem, the fit: find the best model explaining gene expression vs stimulus.
 
 ### Chapter 2. Simple mathematical intuitions.
 
-- Regression vs classification, continous vs categorical and logistic.
-- Activation functions. Quantify importance decision thresholds.
+- Activation functions. Model importance decision thresholds, and some examples.
+- Loss functions. Quantify accuracy / error of a preduition, and some examples.
 - Derivatives and gradients. A recap on calculus, and modelling change.
 
-### Chapter 3. Roadmap of ML algorithms.
+### Chapter 3. NNs and the backpropagation algorithm.
 
-- Supervised learning. Learning from inputs and known outputs.
-- Unsupervised learning. Learning from input only, without labeled output.
-- Reinforcement learning. Trial and error, with reward / penalty.
+- The Neural Network and the backpropagation algorithm:
+    - Example 1: learn image classification to detect brian cancer.
+    - Example 2: annotate cell types over single-cell RNA-seq data.
 
-### Chapter 4. Build a ML model from scratch.
+- The roadmap of modern ML algorithms:
+    - Supervised learning. Learning from inputs and known outputs.
+    - Unsupervised learning. Learning from input only, without labeled output.
+    - Reinforcement learning. Trial and error, with reward / penalty.
 
-- KNN: predict a cell's type by looking at similar cells.
-- Linear regression: find the best model (fit) explaining gene expression vs stimulus.
-- NN: learn image classification to detect brian cancer.
-- Clustering: find cell types over single-cell RNA-seq data.
-
-### Chapter 5. Generative AI.
+### Chapter 4. Generative AI.
 
 - Stochasticity and Markov processes.
 - The transformer technology: pattern recognition with memory access.

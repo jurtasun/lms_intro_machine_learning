@@ -1,4 +1,4 @@
 # MRC LMS Introduction to Machine Learning
-# Chapter 2: Simple mathematical intuitions
+# Chapter 3. Roadmap of ML algorithms
 
 # Exercise 1
