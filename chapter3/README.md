@@ -8,8 +8,8 @@ ICL email address `jurtasun@ic.ac.uk`
 
 <img src="/readme_figures/ukri_lms_logo.png" width = 700>
 
-### Chapter 3. Roadmap of ML algorithms.
+### Chapter 3. Neural networks.
 
-- Supervised learning. Learning from inputs and known outputs.
-- Unsupervised learning. Learning from input only, without labeled output.
-- Reinforcement learning. Trial and error, with reward / penalty.
+- Weights and biases. A layer of neurons as a matrix-vector multiplication.
+- Activation functions. Model decision thresholds: ReLU, sigmoid, softmax.
+- A neural network with TensorFlow and PyTorch.

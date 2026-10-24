@@ -10,6 +10,6 @@ ICL email address `jurtasun@ic.ac.uk`
 
 ### Chapter 2. Simple mathematical intuitions.
 
-- Regression vs classification, continous vs categorical and logistic.
-- Activation functions. Quantify importance decision thresholds.
-- Derivatives and gradients. A recap on calculus, and modelling change.
+- Loss functions. Quantify how far a prediction is from the truth: MSE, chi-squared, cross-entropy.
+- Derivatives. A recap on calculus, and modelling change.
+- Gradient descent. Minimize a loss by following its derivative.
