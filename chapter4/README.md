@@ -8,9 +8,9 @@ ICL email address `jurtasun@ic.ac.uk`
 
 <img src="/readme_figures/ukri_lms_logo.png" width = 700>
 
-### Chapter 4. Build a ML model from scratch.
+### Chapter 4. Generative AI.
 
-- KNN: predict a cell's type by looking at similar cells.
-- Linear regression: find the best model (fit) explaining gene expression vs stimulus.
-- NN: learn image classification to detect brian cancer.
-- Clustering: find cell types over single-cell RNA-seq data.
+- Markov chains. States are vectors, transitions are matrices: sunny, cloudy, rainy.
+- Hidden Markov models. Infer the hidden weather from what we observe: umbrella or no umbrella.
+- Memory and context. When the last step is not enough to predict the next one.
+- Attention. Towards the transformer and large language models.
