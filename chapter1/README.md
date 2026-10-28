@@ -13,3 +13,6 @@ ICL email address `jurtasun@ic.ac.uk`
 - Introduction to information theory.
 - Quantify the accuracy and error of predictions.
 - The loss function and some examples.
+    - Regression: fit a line to gene expression vs stimulus.
+    - Classification: identify an image as a cat or a dog.
+- Extra: KNN, k-means, PCA and Q-learning.
