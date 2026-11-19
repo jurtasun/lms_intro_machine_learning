@@ -25,10 +25,10 @@ No prior mathematical or programming experience is required to attend this cours
 
 - Foundations of learning and information theory.
 - Regression vs classification, continous vs categorical and logistic.
-- Example of classification problem, the KNN: predict a cell's type by looking at similar cells.
 - Example of regression problem, the fit: find the best model explaining gene expression vs stimulus.
-- Unsupervised learning: k-means and PCA, find groups of cells without labels.
-- Reinforcement learning: Q-learning, learn from rewards by trial and error.
+- Example of classification problem: identify an image as a cat or a dog.
+- The loss function: compare the output of a model with the label.
+- Extra: KNN, k-means, PCA and Q-learning, examples of supervised, unsupervised and reinforcement learning.
 
 ### Chapter 2. Simple mathematical intuitions.
 
@@ -50,13 +50,13 @@ No prior mathematical or programming experience is required to attend this cours
 - Modern applications: `AlphaFold` and `GPT` language models.
 
 ## Setting up `Python` and `R` on your own machine
-Setting up `Python` and `R` on your own machine
+Setting up `Python` and `R` on your own machine [...]
 
 ### Instructions for Mac and Linux
-Instructions for Mac and Linux
+Instructions for Mac and Linux [...]
 
 ### Instructions for Windows
-Instructions for Windows
+Instructions for Windows [...]
 
 ## Licence
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence](http://creativecommons.org/licenses/by-nc-sa/4.0/).
